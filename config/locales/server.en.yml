@@ -1,0 +1,5 @@
+en:
+  site_settings:
+    telegram_oidc_enabled: "Enable Telegram login"
+    telegram_oidc_client_id: "Telegram Login client ID from BotFather"
+    telegram_oidc_client_secret: "Telegram Login client secret from BotFather"

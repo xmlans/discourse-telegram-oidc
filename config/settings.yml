@@ -1,0 +1,9 @@
+plugins:
+  telegram_oidc_enabled:
+    default: false
+    client: true
+  telegram_oidc_client_id:
+    default: ""
+  telegram_oidc_client_secret:
+    default: ""
+    secret: true
