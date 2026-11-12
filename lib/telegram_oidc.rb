@@ -70,6 +70,7 @@ class TelegramOidcAuthenticator < Auth::ManagedAuthenticator
                             "token_endpoint" => "https://oauth.telegram.org/token",
                           },
                           scope: "openid profile",
+                          use_userinfo: false,
                           pkce: true,
                           pkce_options: {
                             code_verifier: -> { Base64.urlsafe_encode64(SecureRandom.random_bytes(32), padding: false) },
@@ -77,6 +78,7 @@ class TelegramOidcAuthenticator < Auth::ManagedAuthenticator
                             code_challenge_method: "S256",
                           },
                         )
+                        opts[:client_options] ||= {}
                         opts[:client_options][:connection_opts] = { request: { timeout: 10 } }
                         opts[:client_options][:connection_build] = lambda do |builder|
                           builder.request :url_encoded
